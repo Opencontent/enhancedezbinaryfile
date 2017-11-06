@@ -1,0 +1,23 @@
+{
+    "name": "opencontent/enhancedezbinaryfile-ls",
+    "description": "enhancedezbinaryfile (OpenContent Fork)",
+    "type": "ezpublish-legacy-extension",
+    "authors": [
+        {
+            "name": "Bartek Modzelewski",
+            "homepage": "https://github.com/dbteam/ezchangeclass"
+        },
+        {
+            "name": "OpenContent",
+            "homepage": "http://www.opencontent.it"
+        }
+    ],
+    "license": "GPL-2.0",    
+    "minimum-stability": "dev",
+    "require": {
+        "ezsystems/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezchangeclass"
+    }
+}
