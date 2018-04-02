@@ -20,7 +20,7 @@ class TemplateParseXMLOperator
     /*!
       Constructor, does nothing by default.
     */
-    function TemplateParseXMLOperator()
+    function __construct()
     {
     	$this->Operators = array( 'parsexml','filecheck' );
     }

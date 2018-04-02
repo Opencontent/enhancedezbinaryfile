@@ -46,13 +46,6 @@ class EnhancedeZBinaryFileType extends eZDataType
         parent::__construct( self::DATA_TYPE_STRING, ezpI18n::tr( 'extension/enhancedezbinaryfile/datatype', 'Enhanced File', 'Datatype name' ), array( 'serialize_supported' => true, 'object_serialize_map' => array( 'data_text' => 'filename' )));
     }
 
-    function EnhancedeZBinaryFileType()
-    {
-        $this->eZDataType( self::DATA_TYPE_STRING, ezpI18n::tr( 'kernel/classes/datatypes', "Enhanced File", 'Datatype name' ),
-                           array( 'serialize_supported' => true,'object_serialize_map' => array( 'data_text' => 'filename' )
-                            ));
-    }
-
     /*!
      \return the binary file handler.
     */
@@ -150,7 +143,7 @@ class EnhancedeZBinaryFileType extends eZDataType
             foreach ( $binaryFiles as  $binaryFile )
             {
                 $mimeType =  $binaryFile->attribute( "mime_type" );
-                list( $prefix, $suffix ) = split ('[/]', $mimeType );
+                list( $prefix, $suffix ) = explode ('/', $mimeType );
                 $orig_dir = $storage_dir . '/'.$downloadPath.'/' . $prefix;
                 $fileName = $binaryFile->attribute( "filename" );
 
@@ -171,7 +164,7 @@ class EnhancedeZBinaryFileType extends eZDataType
             if ( $binaryFile != null )
             {
                 $mimeType =  $binaryFile->attribute( "mime_type" );
-                list( $prefix, $suffix ) = split ('[/]', $mimeType );
+                list( $prefix, $suffix ) = explode  ('/', $mimeType );
                 $orig_dir = $storage_dir . "/original/" . $prefix;
                 $fileName = $binaryFile->attribute( "filename" );
 
